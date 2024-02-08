@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Підрахунок слів</title>
+<style>
+  /* Ваші стилі CSS */
+  body {
+    font-family: Arial, sans-serif;
+  }
+  header {
+    background-color: #24728e9b;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  main {
+    padding: 20px;
+  }
+  label {
+    font-weight: bold;
+  }
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    resize: vertical;
+  }
+  button {
+    padding: 10px 20px;
+    background-color: #0b8692;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #45a049;
+  }
+  /* Стилі для кнопки "Назад" */
+  .back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    background-color: #57b5f8d9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  /* Стилі для кнопки "Назад" при наведенні */
+  .back-button:hover {
+    background-color: #57b5f8d9;
+  }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Підрахунок слів</h1>
+</header>
+
+<main>
+    <form id="wordCountForm">
+        <label for="textInput">Введіть текст:</label>
+        <textarea id="textInput" name="textInput" rows="5" cols="50" required></textarea>
+        <button type="button" onclick="countWords()">Обчислити кількість слів</button>
+    </form>
+
+    <div id="wordCountResult"></div> <!-- Тут буде виведено число слів -->
+</main>
+
+<!-- Додана кнопка "Назад" -->
+<a href="button.html"><button class="back-button">Назад</button></a>
+
+<script>
+  function countWords() {
+    var textInput = document.getElementById('textInput').value;
+
+    if (!textInput.trim()) {
+      document.getElementById('wordCountResult').innerText = 'Кількість слів: 0';
+      return; 
+    }
+  
+    let words = textInput.split(/\s+/);
+    let wordCount = words.length;
+  
+    document.getElementById('wordCountResult').innerText = 'Кількість слів: ' + wordCount;
+  }
+</script> <!-- Підключення JavaScript коду -->
+</body>
+</html>

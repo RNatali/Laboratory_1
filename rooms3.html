@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>номера2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+          integrity="sha512-v8n5ojJwzF9pnaooiGXTD6lXLWYQzh3k48Tx+LloHhVwIF1XMw2avT++GL2lw4d9IT8lqhHf+UYk1Xyyiblxlw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style>
+        /* Стилі залишаються незмінними */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .photo-item {
+            width: calc(33.33% - 10px); /* Розмір фото, з відступами між ними */
+            margin-bottom: 20px; /* Відступ між рядками фото */
+            text-align: center;
+            background-color: rgba(161, 217, 242, 0.806);
+            position: relative; /* Додали позицію relative для photo-item */
+        }
+
+        .photo-item img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .photo-item .price {
+            font-weight: bold;
+            font-family: Cursive, sans-serif;
+            color: #1a044e;
+            margin-top: 10px;
+        }
+
+        .my-button {
+            width: 80px;
+            height: 50px;
+            background-color: #57b5f8d9;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 999; /* Підвищення значення z-index, щоб кнопка була вище фотографій */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Доданий стиль для роздільної лінії */
+        hr {
+            margin: 40px 0;
+            border: 0;
+            border-top: 1px solid #ccc;
+        }
+
+        /* Додали стилі для віконця */
+        .calculator-container {
+            margin-top: 20px;
+            text-align: center; /* Центруємо калькулятор по горизонталі */
+        }
+
+        .calculator-container input[type="number"] {
+            padding: 8px;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100px;
+            text-align: center;
+        }
+
+        .calculator-container button {
+            padding: 8px 16px;
+            background-color: #57b5f8d9;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Доданий стиль для тексту біля калькулятора */
+        .calculator-text {
+            margin-bottom: 10px;
+        }
+
+        /* Стилі для іконок результату */
+        .result-icon {
+            font-size: 20px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .result-icon:hover {
+            color: #1a044e;
+        }
+
+        /* Стилі для відображення результату */
+        .result-container {
+            margin-top: 20px;
+            border: 1px solid #57b5f8d9;
+            border-radius: 5px;
+            padding: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 200px;
+        }
+
+        /* Додаткові стилі для відображення результату */
+        .result {
+            margin-bottom: 5px;
+        }
+
+        /* Стилі для списку зручностей */
+        .convenience-info {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .convenience-info h2 {
+            margin-bottom: 10px;
+        }
+
+        .convenience-info ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .convenience-info ul li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <a href="button4.html" ><button class="my-button">Назад</button></a>
+    <div class="photo-gallery">
+        <div class="photo-item">
+            <img src="https://img.poehalisnami.ua/static/hotels/turciya/kemer/h192340/orig/booking192340_3192340_638306313273501949.jpg" alt="Фото 1">
+            <div class="price">4 400 грн.</div>
+        </div>
+        <div class="photo-item">
+            <img src="https://hotel-nivki.kiev.ua/wp-content/uploads/2019/02/3-standart-3.jpg" alt="Фото 2">
+            <div class="price">7 200 грн.</div>
+        </div>
+        <div class="photo-item">
+            <img src="https://hotel-nivki-kiev.hotelmix.com.ua/data/Photos/OriginalPhoto/7857/785752/785752800/Hotel-Nivki-Kyiv-Exterior.JPEG" alt="Фото 3">
+            <div class="price">5 200 грн.</div>
+        </div>
+        <div class="photo-item">
+            <img src="https://img.poehalisnami.ua/static/hotels/turciya/kemer/h24841/orig/booking24841_524841_637379133366328393.jpg" alt="Фото 4">
+            <div class="price">4 500 грн.</div>
+        </div>
+        <div class="photo-item">
+            <img src="https://panda-resort-dahab.hotelmix.com.ua/data/Photos/OriginalPhoto/10851/1085131/1085131342/Panda-Resort-Dahab-Exterior.JPEG" alt="Фото 5">
+            <div class="price">7 100 грн.</div>
+        </div>
+        <div class="photo-item">
+            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/195315507.jpg?k=e3baaef8230146824a5bb81d2fdadddd7787c98142a6a8ab65adc2da040deabe&o=&hp=1" alt="Фото 6">
+            <div class="price">5 900 грн.</div>
+        </div>
+    </div>
+    <div class="calculator-container">
+        <div class="calculator-text">Введіть вартість та кількість днів:</div>
+
+        <input type="number" id="numberInput1" placeholder="Число 1">
+        <input type="number" id="numberInput2" placeholder="Число 2">
+        <button onclick="calculate('sum')"><i class="fas fa-plus-circle result-icon"></i>Сума</button>
+        <button onclick="calculate('product')"><i class="fas fa-times-circle result-icon"></i>Добуток</button>
+        <div class="result-container">
+            <div class="result" id="sumResult"></div>
+            <div class="result" id="productResult"></div>
+        </div>
+    </div>
+    <div class="convenience-info">
+        <div>
+            <h2>Зручності у номері</h2>
+            <ul>
+                <li>Цифрове телебачення</li>
+                <li>Телевізор з плоским екраном</li>
+                <li>Опалення</li>
+                <li>Холодильник</li>
+                <li>Фен</li>
+                <li>Диван</li>
+                <li>Туалет</li>
+                <li>Ванна</li>
+                <li>Стільці</li>
+
+            </ul>
+        </div>
+        <div>
+            <h2>Додаткові послуги</h2>
+            <ul>
+                <li>М'які рушники та тапочки</li>
+                <li>Гігієнічні засоби</li>
+                <li>Масаж</li>
+                <li>Безкоштовний доступ до Wi-Fi</li>
+                <li>Можливість замовлення додаткового спального місця (Додаткове місце надається за запитом за додаткову оплату і тільки після підтвердження послуги адміністратором.)</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    function calculate(operation) {
+        var num1 = parseInt(document.getElementById("numberInput1").value);
+        var num2 = parseInt(document.getElementById("numberInput2").value);
+
+        if (operation === 'sum') {
+            var sum = num1 + num2;
+            document.getElementById("sumResult").innerHTML = "<i class='fas fa-plus-circle result-icon'></i> Сума: " + sum;
+            document.getElementById("productResult").innerHTML = ""; // Очищуємо вікно добутку
+        } else if (operation === 'product') {
+            var product = num1 * num2;
+            document.getElementById("productResult").innerHTML = "<i class='fas fa-times-circle result-icon'></i> Добуток: " + product;
+            document.getElementById("sumResult").innerHTML = ""; // Очищуємо вікно суми
+        }
+    }
+</script>
+</body>
+</html>

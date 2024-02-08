@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ретімно</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="button.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-vN2D9YWua7CE0Nr8TdXYn0h9xgDjuC8j6kXq3xyZqI9rIXs8hHT3X7oUd6O3aw6Xc+mq/e3FAg4sFOe+zIO7+A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background-image: url('Ретімно1.jpg');
+      background-size: cover;
+      margin: 0; /* Відсутність відступів */
+      padding: 0; /* Відсутність відступів */
+    }
+    .phone {
+      position: fixed; /* Фіксована позиція */
+      bottom: 20px; /* Відстань від нижнього краю */
+      right: 20px; /* Відстань від правого краю */
+      width: 50px; /* Ширина телефону */
+      height: auto; /* Автоматична висота */
+      animation: movePhone 2s infinite alternate; /* Виклик анімації */
+    }
+    @keyframes movePhone {
+      from {
+        transform: translateY(0); /* Початкова позиція по вертикалі */
+      }
+      to {
+        transform: translateY(-30px); /* Позиція вгору на 50 пікселів */
+      }
+    }
+    /* Стилі для вікна з інформацією про автора */
+    .author-info {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      z-index: 9999;
+    }
+    .author-info img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    /* Стилі для логотипу */
+    .logo {
+      cursor: pointer;
+    }
+    .logo:hover + .author-info {
+      display: block;
+    }
+    /* Стилі для кнопки в лівому нижньому куті */
+    .go-to-another-page-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #41789fd8;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .go-to-another-page-btn:hover {
+      background-color: #479bc5d4;
+    }
+
+    .go-to-another-page-btn-f {
+      position: fixed;
+      bottom: 20px;
+      left: 400px;
+      background-color: #41789fd8;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .go-to-another-page-btn-f:hover {
+      background-color: #479bc5d4;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="nav-bar">
+    <div class="menu-btn" onclick="toggleMenu()">
+      <i class="fa fa-bars"></i>
+    </div>
+    // <div class="menu-container">
+      <div class="menu-buttons">
+       <a href="#" class="my-button3" onclick="openModal()">Генерація пароля</a>
+      
+      </div>
+    </div>
+    <div class="search-box">
+      <input type="text" name="" class="search-txt" placeholder="Type to search" />
+      <a class="search-btn" href="#">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="black">
+          <!-- Вставте тут вашу іконку лупи -->
+          <path d="M0 0h24v24H0z" fill="none"/>
+          <path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 0 0 16 9.5 6.5 6.5 0 0 0 9.5 3 6.5 6.5 0 0 0 3 9.5 6.5 6.5 0 0 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 20l-4.99-5zM9.5 14c-2.49 0-4.5-2.01-4.5-4.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+  <div class="content">
+    <div class="header">
+      <!-- Лого та вікно з інформацією про автора -->
+      <div>
+        <img src="ЛОГО.png" class="logo">
+        <div class="author-info">
+          <img src="порт.jpg" alt="Фото автора">
+          <p>Ратушняк Наталія</p>
+          <p>Студентка ЧНУ ім. Юрія Федьковича спеціальність "Комп'ютерні науки"</p>
+          <p>Телефони:</p>
+          <p>(044) 364-80-58</p>
+          <p>(068) 472-99-57</p>
+        </div>
+      </div>
+      <h1 class="outlined-text title">Готельний комплекс «Ретімно»</h1>
+      <img src="телефон.png" class="phone" alt="Phone">
+    </div>
+
+    <div id="myModal" class="modal" style="background-color: rgba(255, 255, 255, 0.316);">
+    <div class="modal-content" style="width: 60%;">
+      <span class="close" onclick="closeModal()">&times;</span>
+
+      <form id="registrationForm" class="register-tab">
+        <h2>Генерація</h2>
+
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" required>
+        <!-- кнопка для генерації та заповнення паролю -->
+        <button type="button" id="generatePasswordButton" onclick="generateAndFillPassword()">Генерувати пароль</button>
+        <!-- кнопка для відображення/приховування паролю -->
+        <button type="button" id="passwordVisibilityButton" onclick="togglePasswordVisibility()">Показати пароль</button>
+
+        <!-- Додати новий елемент для відображення згенерованого паролю -->
+        <span id="generatedPassword"></span>
+
+        <!-- Кнопка "Зареєструватися" з викликом closeModal() -->
+        <button type="submit" onclick="closeModal()">Зареєструватися</button>
+      </form>
+    </div>
+  </div>
+
+  <button class="go-to-another-page-btn" onclick="goToAnotherPage()">Обчислити кількість введених слів у тексті.</button>
+  <button class="go-to-another-page-btn-f" onclick="goToAnotherPager()">Обчислити суму та добуток чисел</button>
+
+
+  <script src="scripts.js"></script>
+  <script>
+    // Функція, що відкриває модальне вікно
+    function openModal() {
+      document.getElementById('myModal').style.display = 'block';
+    }
+
+    // Функція, що закриває модальне вікно
+    function closeModal() {
+      document.getElementById('myModal').style.display = 'none';
+    }
+
+    // Функція, яка переходить на головну сторінку
+    function goToAnotherPage() {
+      window.location.href = "dodatk.html"; // Замініть посилання на власне
+    }
+
+    function goToAnotherPager() {
+      window.location.href = "suma.html"; // Замініть посилання на власне
+    }
+
+    function generateAndFillPassword() {
+      // Викликаємо функцію генерації паролю з довжиною 10 символів
+      const password = generateRandomPassword(10);
+      // Заповнюємо поле паролю згенерованим паролем
+      document.getElementById('password').value = password;
+    }
+
+    // Функція для генерації рандомного паролю
+    function generateRandomPassword(length) {
+      const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-+=<>?";
+      let password = "";
+      for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * charset.length);
+        password += charset[randomIndex];
+      }
+      return password;
+    }
+
+    // Функція для перемикання відображення/приховування паролю
+    function togglePasswordVisibility() {
+      const passwordInput = document.getElementById('password');
+      const passwordVisibilityButton = document.getElementById('passwordVisibilityButton');
+
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        passwordVisibilityButton.textContent = 'Приховати пароль';
+      } else {
+        passwordInput.type = 'password';
+        passwordVisibilityButton.textContent = 'Показати пароль';
+      }
+    }
+  </script>
+  <script>
+    window.onload = function() {
+      var phone = document.querySelector('.phone');
+      var screenWidth = window.innerWidth;
+      var moveDistance = screenWidth - phone.offsetWidth;
+
+      function movePhone() {
+        phone.style.right = '20px'; /* Зміна відстані зліва */
+        phone.style.bottom = '2px'; /* Зміна відстані знизу */
+      }
+
+      // Викликаємо функцію руху телефону
+      movePhone();
+
+      // Додаємо обробник подій для руху телефону при зміні розміру вікна
+      window.addEventListener('resize', function() {
+        movePhone();
+      });
+    };
+  </script>
+</body>
+</html>

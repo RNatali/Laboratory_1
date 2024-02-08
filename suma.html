@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+    <style>
+        /* Стилі залишаються незмінними */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .calculator-container {
+            margin-top: 270px;
+        }
+
+        .calculator-container input[type="number"] {
+            padding: 8px;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100px;
+            text-align: center;
+        }
+
+        .calculator-container button {
+            padding: 8px 16px;
+            background-color: #57b5f8d9;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Стилі для іконок результату */
+        .result-icon {
+            font-size: 20px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .result-icon:hover {
+            color: #1a044e;
+        }
+
+        /* Стилі для відображення результату */
+        .result-container {
+            margin-top: 20px;
+            border: 1px solid #57b5f8d9;
+            border-radius: 5px;
+            padding: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 200px;
+        }
+
+        /* Додаткові стилі для відображення результату */
+        .result {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calculator-container">
+    <div class="calculator-text">Введіть числа для обчислення:</div>
+
+    <input type="number" id="numberInput1" placeholder="Число 1">
+    <input type="number" id="numberInput2" placeholder="Число 2">
+    <button onclick="calculate('sum')"><i class="fas fa-plus-circle result-icon"></i>Сума</button>
+    <button onclick="calculate('product')"><i class="fas fa-times-circle result-icon"></i>Добуток</button>
+    <div class="result-container">
+        <div class="result" id="sumResult"></div>
+        <div class="result" id="productResult"></div>
+    </div>
+</div>
+
+<script>
+    function calculate(operation) {
+        var num1 = parseInt(document.getElementById("numberInput1").value);
+        var num2 = parseInt(document.getElementById("numberInput2").value);
+
+        if (isNaN(num1) || isNaN(num2)) {
+            alert("Будь ласка, введіть числа для обчислення.");
+            return;
+        }
+
+        if (operation === 'sum') {
+            var sum = num1 + num2;
+            document.getElementById("sumResult").innerHTML = "<i class='fas fa-plus-circle result-icon'></i> Сума: " + sum;
+            document.getElementById("productResult").innerHTML = ""; // Очищуємо вікно добутку
+        } else if (operation === 'product') {
+            var product = num1 * num2;
+            document.getElementById("productResult").innerHTML = "<i class='fas fa-times-circle result-icon'></i> Добуток: " + product;
+            document.getElementById("sumResult").innerHTML = ""; // Очищуємо вікно суми
+        }
+    }
+</script>
+
+</body>
+</html>

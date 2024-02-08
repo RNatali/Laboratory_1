@@ -1,0 +1,73 @@
+/* Стилі для кнопок */
+.my-button {
+    width: 80px;
+    height: 50px;
+    background-color: #4185b7bf; /* Колір фону кнопки */
+    color: #ffffff; /* Колір тексту кнопки */
+    border: none; /* Видалити рамку */
+    border-radius: 5px; /* Закруглені кути */
+    cursor: pointer; /* Змінити вигляд курсора при наведенні */
+    transition: background-color 0.3s ease; 
+  }
+  
+  body {
+    background-image: none; /* Видалити задній фон */
+  }
+  
+  h1.left-margin {
+    font-family: Helvetica, sans-serif;
+    margin-top: 5px; /* Встановіть бажаний вертикальний відступ */
+    font-size: 40px; /* Збільште розмір шрифту */
+    font-weight: bold; 
+    background-color: rgba(28, 124, 166, 0.383);
+  }
+  
+  .contact-info {
+    text-align: left;
+    margin-left: 20px;
+    font-size: 18px;
+    color: black;
+    display: inline-block; /* Додайте цей стиль для розміщення в рядок */
+    width: 45%; /* Встановіть ширину для двох стовпців */
+  }
+  
+  .contact-info-right {
+    font-family: Arial, sans-serif;
+    text-align: left;
+    margin-left: 20px;
+    font-size: 18px;
+    color: black;
+    display: inline-block; /* Додайте цей стиль для розміщення в рядок */
+    width: 45%; /* Встановіть ширину для двох стовпців */
+  }
+  
+  .larger-text {
+    font-family: Arial, sans-serif;
+    font-size: 20px; /* Збільште розмір шрифту */
+    font-weight: bold; /* Збільште жирність тексту */
+  }
+  
+  /* Анімація слова "Контакти" */
+  .animate-heading {
+    font-size: 0;
+    animation: fadeInText 2s forwards;
+  }
+  
+  @keyframes fadeInText {
+    0% {
+      font-size: 0;
+    }
+    100% {
+      font-size: 40px;
+    }
+  }
+
+  .floating-image {
+    position: fixed;
+    bottom: -200px;
+    right: -200px;
+    width: 500px; /* Розмір зображення */
+    height: auto;
+    z-index: 999; /* Забезпечує, що зображення знаходиться поверх іншого вмісту */
+    /* Додайте будь-які додаткові стилі, які ви бажаєте */
+}

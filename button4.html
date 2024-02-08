@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея фото</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('11.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Стилі для кнопки "Моя кнопка" */
+        .blur-button {
+            position: fixed; /* Зафіксовуємо кнопку на екрані */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('2005.jpg'); /* Додайте шлях до вашого зображення */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 0; /* Видаляємо округлені кути */
+            transition: all 0.3s ease;
+            z-index: -1; /* Змінюємо z-index, щоб кнопка була за іншими елементами */
+        }
+
+        /* Розмиття кнопки при наведенні */
+        .blur-button:hover {
+            filter: blur(5px);
+        }
+
+        .custom-select {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: inline-block;
+        }
+
+        .custom-select select {
+            display: none;
+        }
+
+        .select-styled {
+            display: inline-block;
+            padding: 40px 80px 40px 80px;
+            font-size: 25px;
+            cursor: pointer;
+            background-color: #76c1fee5;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .select-styled:after {
+            content: '\25BC';
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+        }
+
+        .select-options {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+            z-index: 1;
+        }
+
+        .select-options ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .select-options li {
+            padding: 20px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .select-options li:hover {
+            background-color: #80afce;
+        }
+
+        /* При наведенні на .custom-select відкриваємо випадаючий список */
+        .custom-select:hover .select-options {
+            display: block;
+        }
+
+        .my-button {
+            width: 80px;
+            height: 50px;
+            background-color: #57b5f8d9; /* Колір фону кнопки */
+    color: #ffffff; /* Колір тексту кнопки */
+    border: none; /* Видалити рамку */
+    border-radius: 5px; /* Закруглені кути */
+    cursor: pointer; /* Змінити вигляд курсора при наведенні */
+    transition: background-color 0.3s ease; 
+        }
+
+       
+        
+    </style>
+</head>
+<body>
+    <a href="button.html"><button class="my-button">На головну</button></a>
+ 
+    <div class="custom-select">
+        <div class="select-styled" id="selectedOption">Оберіть місця</div>
+        <div class="select-options">
+            <ul>
+                <li onclick="selectOption('rooms2.html')">Для 2-х</li>
+                <li onclick="selectOption('rooms3.html')">Для 3-х</li>
+                <li onclick="selectOption('rooms4.html')">Для 4-х</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Додана кнопка "Моя кнопка" -->
+    <button class="blur-button">Моя кнопка</button>
+
+    <script>
+        function selectOption(url) {
+            if (url) {
+                window.location.href = url;
+            }
+        }
+    </script>
+</body>
+</html>
